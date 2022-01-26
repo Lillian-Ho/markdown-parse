@@ -15,10 +15,12 @@ public class MarkdownParse {
             int nextCloseBracket = markdown.indexOf("]", nextOpenBracket);
             int openParen = markdown.indexOf("(", nextCloseBracket);
             int closeParen = markdown.indexOf(")", openParen);
-            if(nextOpenBracket != 0 && markdown.charAt(nextOpenBracket-1) == '!') {  //nextOpenBracket = 0 -> -1 index
+            //differentiates a link from an image 
+            if(nextOpenBracket != 0 && markdown.charAt(nextOpenBracket-1) == '!') {  
                 currentIndex = closeParen + 1; 
                 continue; //jumps to the next iteration of while loop
             }
+            //returns if there is no open parentheses 
             if(openParen == -1) { 
                 return toReturn;
             }

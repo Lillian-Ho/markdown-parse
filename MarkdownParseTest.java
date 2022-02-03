@@ -33,7 +33,7 @@ public class MarkdownParseTest {
         Path fileName = Path.of("no-paren.md");
 	    String contents = Files.readString(fileName);
         ArrayList<String> links = MarkdownParse.getLinks(contents);
-        assertEquals(List.of("alinkthatshouldnotbehere.com"), links);
+        assertEquals(List.of(), links);
     }
 
     @Test 

@@ -19,11 +19,6 @@ public class MarkdownParse {
                 currentIndex = closeParen + 1;
                 continue;
             }
-            //checks if there is a ` in front of the open bracket
-            if(nextOpenBracket !=0 && markdown.charAt(nextOpenBracket-1) == '`') {
-                currentIndex = closeParen + 1; 
-                continue; 
-            }
             if(openParen == -1) { 
                 return toReturn;
             }

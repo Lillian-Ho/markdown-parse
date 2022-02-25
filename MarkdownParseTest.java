@@ -54,7 +54,7 @@ public class MarkdownParseTest {
         Path fileName = Path.of("Snippet1.md"); 
         String contents = Files.readString(fileName); 
         ArrayList<String> links = MarkdownParse.getLinks(contents); 
-        assertEquals(List.of("google.com", "ucsd.edu"), links); 
+        assertEquals(List.of("`google.com","google.com", "ucsd.edu"), links); 
     }
 
     @Test
